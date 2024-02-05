@@ -1,0 +1,18 @@
+
+#1) Describa el funcionamiento del código en la carpeta Boot. (boot.s y main.c)
+-> La carpeta Boot simplemente arranca la BIOS moviendo la posicion de memoria 0x07c00 que es constante,
+	se sabe que esta en el primer sector de memoria, imprime un caracter E gracias a la interrupcion 0x10
+#3) ¿Por qué no podemos implementar la impresión de la cadena “hello world” con un printf en main.c? 
+-> No se puede ya que el BIOS esta en un modo el cual no ha cargado las librerias y no lo podra hacer a menos
+	que se le pida carga headers de C, para hacer el printf necesitariamos #include <stdio.h> incluir stdio.h
+#4 ¿Cómo podemos cambiar el orden de “booteo” en la configuración del Bochs?, escriba el ejemplo del como quedaría la configuración si deseáramos “bootear” primero desde el floppy y luego desde el HD.
+ctrl+alt+t
+$: bochs
+Please choose one: 3
+Please choose one: 12
+Please choose one: 15
+Please choose one: 1
+Boot from floppy drive, hard drive, or cdrom ? [floppy] floppy
+Please choose one: 2
+Boot from floppy drive, hard drive, or cdrom ? [none] drive
+exit
